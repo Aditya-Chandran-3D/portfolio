@@ -12,7 +12,7 @@ document.head.appendChild(css);
 const target = document.getElementById("header-placeholder") || document.getElementById("header-placeholder-hide");
 
 if (target) {
-  fetch("/all/header/header.html")
+  fetch("all/header/header.html")
     .then(res => res.text())
     .then(html => {
       target.innerHTML = html;
