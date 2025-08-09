@@ -1,0 +1,44 @@
+/* preloader *//* preloader *//* preloader *//* preloader */
+
+
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-family: sans-serif;
+    transition: opacity 0.5s ease, transform 1s cubic-bezier(0.51, 0, 0.7, 0.5);
+    will-change: transform;
+  }
+
+  .loader {
+    text-align: center;
+    font-size: 0.6em;
+    text-transform: uppercase;
+    letter-spacing: 0.4em; 
+  }
+
+  .bar {
+    width: 15em;
+    height: 1em;
+    background: #333;
+    border-radius: 1.2em;
+    overflow: hidden;
+  }
+
+  .fill {
+    width: 0%;
+    height: 100%;
+    background: #fff;
+    transition: width 0.3s;
+    border-radius: 0.2em;
+  }
+
+  .fade-out {
+  opacity: 1;
+  pointer-events: none;
+  transform: translateY(-100%);
+  } 

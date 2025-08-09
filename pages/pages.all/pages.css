@@ -1,0 +1,99 @@
+.AAA {
+  margin-top: calc(var(--headpad) + 2.5rem);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--accent);
+}
+
+/* Embed YouTube video solo, centered and responsive *//*==============================*/
+.ytvideo {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Responsive YouTube iframe */
+.ytvideo iframe {
+  width: 100%;
+  max-width: 1100px;
+  aspect-ratio: 16 / 9; /* Maintains aspect ratio */
+  height: auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: black; /* Optional: prevents white flash on load */
+}
+
+/*==============================*//*==============================*/
+.pageVideo {
+  width: fit-content;
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 100%;
+  text-align: center;
+}
+
+.pageVideo video {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+}
+
+/* On small screens (like phones), remove height limit */
+@media (max-width: 768px) {
+  .pagevideo video {
+    max-height: none;
+  }
+}
+
+
+
+
+
+
+/* Caption styling */
+.caption {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+/* Responsive video */
+.pagevideo video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+/* Flex grid for images or content groups *//*==============================*/
+.pageImagesgroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2rem 0;
+}
+
+/* Images keep natural aspect ratio and never overflow */
+.pageImagesgroup img {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;    /* Controls scaling — adjust as needed */
+  object-fit: contain;  /* No cropping */
+  border-radius: 8px;
+}

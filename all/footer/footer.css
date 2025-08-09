@@ -1,0 +1,81 @@
+footer {
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid #333;
+  font-size: 0.9rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.social-container {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.4rem, 2vw, 1.2rem); 
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+
+.social {
+  width: clamp(40px, 10vw, 60px); 
+  aspect-ratio: 1 / 1;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.icon {
+  width: 60%;
+  height: 60%;
+}
+
+.cube {
+  background-color: #cc00ff;
+  border-radius: 0.6em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+  pointer-events: none; /* So label hover can work */
+}
+
+.cube.instagram {
+  background-color: #e63c6f;
+}
+.cube.youtube {
+  background-color: #ee2323;
+}
+.cube.artstation {
+  background-color: #1f97e7;
+}
+.cube.twitter {
+  background-color: #5d708d;
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent);
+  border-radius: 1em;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  font-size: 0.6rem; /* You control this */
+  transform: translateY(0%);
+  transition: transform 0.3s ease;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.social:hover .label {
+  transform: translateY(-25%);
+}

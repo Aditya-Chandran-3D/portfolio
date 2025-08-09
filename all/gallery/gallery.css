@@ -1,0 +1,115 @@
+.mainContainer {
+  padding-top: 8em;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 17px;
+  margin: 20px auto;
+  max-width: fit-content;
+
+  background-color: rgb(var(--bg) / var(--head-alpha)); /* matches header */
+  border: var(--border-size) solid var(--border-color);
+  border-radius: var(--radius);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button-group .button {
+  padding: 8px 16px;
+  font-size: 1.2em;
+  font-family: var(--font);
+  color: var(--accent);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-group .button:hover,
+.button-group .button.active {
+ background-color: var(--button-color);
+ filter: invert(1);
+}
+
+@media (max-width: 1200px) {
+  .button-group {
+      gap: 2px;
+  }
+  .mainContainer {
+  padding-top: 6em;
+}
+}
+
+@media (max-width: 600px) {
+  .button-group .button {
+    font-size: 0.8rem;
+  }
+
+  .mainContainer {
+  padding-top: 5em;
+}
+}
+
+
+
+
+
+
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.gallery .item {
+  position: relative;
+  overflow: hidden;
+  width: calc((100% - (var(--columns) - 1) * 1rem) / var(--columns));
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius);
+  border: var(--border-size) solid var(--border-color);
+}
+
+.gallery .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery .item:hover img {
+  transform: scale(1.05);
+  filter: blur(5px);
+}
+
+.gallery .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: lighter;
+  font-size: 1.2em;
+  opacity: 0;
+  transition: 0.3s ease;
+  z-index: 2; /* ensure overlay is above image */
+}
+
+.gallery .item:hover .overlay {
+  opacity: 1;
+}

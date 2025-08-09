@@ -1,0 +1,143 @@
+/* header *//* header *//* header *//* header */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: calc(var(--headpad) / 3) 0rem;
+  margin-top: calc(var(--headpad) / 7 );
+  z-index: 99;
+  border-radius: 100vh;
+  scale: 90%;
+  background-color: rgb(var(--bg) / var(--head-alpha));
+  backdrop-filter: blur(30px);
+  box-shadow: 0 20px 40px rgba(5, 5, 5, 0.5);
+  
+  border-style: solid;
+  border-color: var(--border-color);
+  border-width: var(--border-size);
+  transition: all 0.1s ease;
+}
+
+#blur-overlay {
+  position: fixed;
+  scale: 150%;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 998; /* Below your sidebar */
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5); /* optional dark overlay */
+  display: none; /* Hidden by default */
+}
+
+
+header.noblur {
+  backdrop-filter: none !important;
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5em;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.mylogo {
+  padding-left: calc(var(--headpad) / 2);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  color: var(--accent);
+}
+
+
+.header-main nav a {       /* menu */
+  font-size: 1.4rem;
+  color: var(--accent);
+  text-decoration: none;
+  padding: calc(var(--radius) / 2) calc(var(--radius));
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.header-main nav a:hover {
+  background-color: var(--button-color);
+  filter: invert(1);
+}
+
+.header-main .closebutton:hover {
+  background-color: transparent;
+  filter: invert(0);
+}
+
+.menus {
+  margin: 0.5em;
+}
+
+.closeicon {
+  margin-left: 110px;
+  transform: scale(3);
+  transform-origin: center;
+}
+
+.menuicon {
+  transform: scale(3);
+  transform-origin: center;
+}
+
+.menuhidden {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  border-radius: var(--radius);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  
+  background-color: rgba(26, 26, 26, 0.76);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 20px 40px rgba(5, 5, 5, 0.5);
+}
+
+
+@media (max-width: 1200px) {
+   .header-main {
+    padding: 0 1em;
+  }
+  
+  .menus2 {
+    display: none;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .header-main {
+    padding: 0 2em;
+  }
+
+  .mylogo {
+  padding-left: calc(var(--headpad) / 4);
+  padding: 5px 0;
+  font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .menuicon {
+    display: none;
+  }
+
+  .menuicon-con {
+    display: none;
+  }
+}
