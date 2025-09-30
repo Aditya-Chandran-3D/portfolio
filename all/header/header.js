@@ -1,6 +1,4 @@
-// Auto-detect correct header CSS path based on folder depth
-const depth = window.location.pathname.split('/').length - 2;
-const cssPath = `${'../'.repeat(depth)}all/header/header.css`;
+
 
 // Load header CSS
 const css = document.createElement("link");
